@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useCallback, useMemo, useState,useEffect } from "react";
+import "./App.css";
+import Home from "./Component/Home";
+import { Route, Router, Routes, useParams } from "react-router-dom";
+import Error from "./Component/Error";
 
 function App() {
+  let {id}=useParams();
+  const url=`https://inshortsapi.vercel.app/news?category=all`
+  // const url1=`https://inshortsapi.vercel.app/news?category=${id}`
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Routes>
+      <Route path="/" element={<Home url={url}/>}/>
+      <Route path="/:id" element={<Home />}/>
+    </Routes>
+    </>
   );
 }
 

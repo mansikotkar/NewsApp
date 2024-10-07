@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
-}
+/* LoadingScreen.css */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.loading-screen {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff; /* Light blue background */
+}
+
+.loader {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #176eb9; /* Blue */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1.5s linear infinite;
+  margin: 400px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ErrorScreen.css */
+
+.error-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e3f2fd; /* Light blue background */
+}
+
+.error-box {
+  text-align: center;
+  padding: 40px;
+  border-radius: 8px;
+  background-color: #bbdefb; /* Blue background for error box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+.error-title {
+  font-size: 24px;
+  color: #0d47a1; /* Dark blue color for the error title */
+  margin-bottom: 20px;
+}
+
+.error-message {
+  font-size: 16px;
+  color: #1976d2; /* Medium blue for the error message */
+  margin-bottom: 30px;
+}
+
+.retry-button {
+  background-color: #1976d2;
   color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.retry-button:hover {
+  background-color: #1565c0;
 }
